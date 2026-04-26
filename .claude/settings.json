@@ -1,0 +1,14 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(xargs grep *)",
+      "Bash(pnpm install *)",
+      "PowerShell(Get-Command node, npm, npx 2>&1)",
+      "PowerShell(node --version)",
+      "PowerShell(npm --version)",
+      "PowerShell(npx --version 2>&1)",
+      "PowerShell(Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass; Set-Location \"c:\\\\Users\\\\Majd\\\\Downloads\\\\informakit-agency-backend\"; $env:DATABASE_URL=\"postgresql://postgres:83H3TOk6cblOOZue@db.tgctjnkgxzmztmwtzfzm.supabase.co:5432/postgres\"; npx drizzle-kit push 2>&1)",
+      "PowerShell(Test-NetConnection -ComputerName localhost -Port 3000 -InformationLevel Quiet 2>&1)"
+    ]
+  }
+}
