@@ -194,13 +194,36 @@ const heroStyles = `
 @media(max-width:768px){
   .hero-chip{display:none}
   .hero-side-label{display:none}
-  .hero-stats{gap:24px;flex-wrap:wrap}
+  .hero-stats{gap:20px;flex-wrap:wrap;justify-content:center}
   .hero-stat-num{font-size:22px}
-  .bar-nav-item{padding:8px 12px;font-size:13px}
   .gc-grid{grid-template-columns:1fr}
   .zahlen-grid{grid-template-columns:1fr}
   .service-item{flex-direction:column;gap:20px;text-align:center}
   .footer-pills{flex-direction:column;align-items:center}
+  .floating-container{bottom:16px;width:calc(100% - 32px);left:16px;right:16px;margin:0}
+  .anfrage-btn{min-width:unset;width:100%;height:54px;justify-content:center}
+  .anfrage-label{position:relative;left:unset;transform:none;font-size:16px}
+  .anfrage-circle{position:absolute;left:12px}
+  .anfrage-btn:hover .anfrage-label{opacity:1}
+  .anfrage-btn:hover .anfrage-circle{width:44px;border-radius:50%}
+  .floating-bar{justify-content:space-between;padding:4px 8px;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+  .floating-bar::-webkit-scrollbar{display:none}
+  .bar-nav-item{padding:9px 10px;font-size:12px;letter-spacing:0.03em}
+  .theme-btn{min-width:42px;height:36px;padding:3px}
+  .theme-btn-label{display:none}
+  .theme-btn-circle{width:28px;height:28px}
+  .theme-btn:hover .theme-btn-circle{width:calc(100% - 6px)}
+  .leistungen-title h2{font-size:clamp(28px,7vw,42px)}
+  .footer-main{padding:60px 20px}
+  .footer-bottom{padding:20px 20px 0;flex-direction:column;align-items:center;text-align:center}
+}
+@media(max-width:480px){
+  .bar-nav-item{padding:8px 8px;font-size:11px}
+  .anfrage-btn{height:50px}
+  .anfrage-label{font-size:15px}
+  .zahlen-big{font-size:48px}
+  .hero-ctas{flex-direction:column;align-items:center;gap:10px}
+  .hero-cta{width:100%;max-width:280px;justify-content:center}
 }
 
 /* -- Light mode: white + anthracite -- */
