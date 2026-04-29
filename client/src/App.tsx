@@ -9,6 +9,7 @@ import InquiryPage from "./pages/InquiryPage";
 import AdminDashboard from "./pages/AdminDashboard";
 import AdminInquiryDetail from "./pages/AdminInquiryDetail";
 import AdminLogin from "./pages/AdminLogin";
+import CookieBanner from "./components/CookieBanner";
 
 function Router() {
   return (
@@ -31,6 +32,7 @@ function App() {
         <TooltipProvider>
           <Toaster />
           <Router />
+          <CookieBanner />
         </TooltipProvider>
       </ThemeProvider>
     </ErrorBoundary>
