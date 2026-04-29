@@ -40,8 +40,8 @@ export default function Impressum() {
           <h2>Verantwortliche Person</h2>
           <p>
             <strong style={{ color: "rgba(255,255,255,0.85)" }}>Majd Akkash</strong><br />
-            <span className="legal-placeholder">[Straße Hausnummer]</span><br />
-            <span className="legal-placeholder">[PLZ] [Stadt]</span><br />
+            Süringstr. 4<br />
+            48653 Coesfeld<br />
             Deutschland
           </p>
         </div>
@@ -57,10 +57,8 @@ export default function Impressum() {
         <div className="legal-divider" />
 
         <div className="legal-section">
-          <h2>Umsatzsteuer-Identifikationsnummer</h2>
-          <p>
-            Gemäß § 27a Umsatzsteuergesetz: <span className="legal-placeholder">[USt-IdNr. eintragen oder Satz entfernen wenn nicht vorhanden]</span>
-          </p>
+          <h2>Verantwortlich für den Inhalt (§ 18 Abs. 2 MStV)</h2>
+          <p>Majd Akkash, Süringstr. 4, 48653 Coesfeld</p>
         </div>
 
         <div className="legal-section">

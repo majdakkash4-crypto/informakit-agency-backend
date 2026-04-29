@@ -55,6 +55,7 @@ export default function Datenschutz() {
           <h2>1. Verantwortlicher</h2>
           <p>
             <strong style={{ color: "rgba(255,255,255,0.85)" }}>Majd Akkash — InformaKit</strong><br />
+            Süringstr. 4, 48653 Coesfeld, Deutschland<br />
             E-Mail: <a href="mailto:hallo@informakit.de">hallo@informakit.de</a><br />
             Website: <a href="https://www.informakit.de">www.informakit.de</a>
           </p>
