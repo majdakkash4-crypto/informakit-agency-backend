@@ -1,5 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { useLocation } from "wouter";
+import { Bot, Palette, TrendingUp, Share2, Smartphone, Lightbulb, Moon, Sun } from "lucide-react";
+import { useTheme } from "../contexts/ThemeContext";
 
 // ─── Keyframe animations as inline styles ──────────────────────
 const heroStyles = `
@@ -208,6 +210,7 @@ const INFORMAKIT = "INFORMAKIT".split("");
 
 export default function Home() {
   const [, navigate] = useLocation();
+  const { theme, toggleTheme } = useTheme();
   const barNavRef = useRef<HTMLDivElement>(null);
   const barCursorRef = useRef<HTMLDivElement>(null);
   const [activeSection, setActiveSection] = useState("home");
@@ -348,19 +351,19 @@ export default function Home() {
         </div>
         <div className="gc-grid">
           {[
-            { tag: "01 · automatisierung", title: "ki & automatisierungen", desc: 'Zapier, Make, n8n, GPT — <em>spare 10h pro Woche.</em>', icon: "⚡", gradient: "radial-gradient(ellipse at bottom right,rgba(99,102,241,0.75) -10%,transparent 70%),radial-gradient(ellipse at bottom left,rgba(56,189,248,0.65) -10%,transparent 70%)" },
-            { tag: "02 · branding", title: "branding & design-system", desc: 'Logo, Farbe, Typografie — <em>wiedererkennbar</em> gemacht.', icon: "⭐", gradient: "radial-gradient(ellipse at bottom right,rgba(239,68,68,0.70) -10%,transparent 70%),radial-gradient(circle at bottom center,rgba(249,115,22,0.60) -20%,transparent 60%)" },
-            { tag: "03 · seo", title: "seo & performance", desc: 'Google findet dich — <em>und versteht</em> dich.', icon: "📈", gradient: "radial-gradient(ellipse at bottom right,rgba(172,92,255,0.75) -10%,transparent 70%),radial-gradient(ellipse at bottom left,rgba(217,70,239,0.65) -10%,transparent 70%)" },
-            { tag: "04 · content", title: "social media & content", desc: 'Content mit Haltung — <em>echte Anfragen</em> statt Likes.', icon: "📱", gradient: "radial-gradient(ellipse at bottom right,rgba(16,185,129,0.70) -10%,transparent 70%),radial-gradient(ellipse at bottom left,rgba(5,150,105,0.55) -10%,transparent 70%)" },
-            { tag: "05 · mobile", title: "mobile apps", desc: 'iOS + Android + Web. Von MVP bis <em>App-Store-Release.</em>', icon: "📲", gradient: "radial-gradient(ellipse at bottom right,rgba(249,115,22,0.70) -10%,transparent 70%),radial-gradient(circle at bottom center,rgba(239,68,68,0.55) -20%,transparent 60%)" },
-            { tag: "06 · strategie", title: "digital consulting", desc: 'Sparring für Gründer. <em>Klarheit vor Aktion.</em>', icon: "🧠", gradient: "radial-gradient(ellipse at bottom right,rgba(6,182,212,0.70) -10%,transparent 70%),radial-gradient(ellipse at bottom left,rgba(8,145,178,0.55) -10%,transparent 70%)" },
+            { tag: "01 · automatisierung", title: "ki & automatisierungen", desc: 'Zapier, Make, n8n, GPT — <em>spare 10h pro Woche.</em>', icon: <Bot size={20} color="rgba(255,255,255,0.85)" />, gradient: "radial-gradient(ellipse at bottom right,rgba(99,102,241,0.75) -10%,transparent 70%),radial-gradient(ellipse at bottom left,rgba(56,189,248,0.65) -10%,transparent 70%)" },
+            { tag: "02 · branding", title: "branding & design-system", desc: 'Logo, Farbe, Typografie — <em>wiedererkennbar</em> gemacht.', icon: <Palette size={20} color="rgba(255,255,255,0.85)" />, gradient: "radial-gradient(ellipse at bottom right,rgba(239,68,68,0.70) -10%,transparent 70%),radial-gradient(circle at bottom center,rgba(249,115,22,0.60) -20%,transparent 60%)" },
+            { tag: "03 · seo", title: "seo & performance", desc: 'Google findet dich — <em>und versteht</em> dich.', icon: <TrendingUp size={20} color="rgba(255,255,255,0.85)" />, gradient: "radial-gradient(ellipse at bottom right,rgba(172,92,255,0.75) -10%,transparent 70%),radial-gradient(ellipse at bottom left,rgba(217,70,239,0.65) -10%,transparent 70%)" },
+            { tag: "04 · content", title: "social media & content", desc: 'Content mit Haltung — <em>echte Anfragen</em> statt Likes.', icon: <Share2 size={20} color="rgba(255,255,255,0.85)" />, gradient: "radial-gradient(ellipse at bottom right,rgba(16,185,129,0.70) -10%,transparent 70%),radial-gradient(ellipse at bottom left,rgba(5,150,105,0.55) -10%,transparent 70%)" },
+            { tag: "05 · mobile", title: "mobile apps", desc: 'iOS + Android + Web. Von MVP bis <em>App-Store-Release.</em>', icon: <Smartphone size={20} color="rgba(255,255,255,0.85)" />, gradient: "radial-gradient(ellipse at bottom right,rgba(249,115,22,0.70) -10%,transparent 70%),radial-gradient(circle at bottom center,rgba(239,68,68,0.55) -20%,transparent 60%)" },
+            { tag: "06 · strategie", title: "digital consulting", desc: 'Sparring für Gründer. <em>Klarheit vor Aktion.</em>', icon: <Lightbulb size={20} color="rgba(255,255,255,0.85)" />, gradient: "radial-gradient(ellipse at bottom right,rgba(6,182,212,0.70) -10%,transparent 70%),radial-gradient(ellipse at bottom left,rgba(8,145,178,0.55) -10%,transparent 70%)" },
           ].map((card, i) => (
             <div className="gc" key={i}>
               <div className="gc-bg" />
               <div className="gc-glow" style={{ background: card.gradient }} />
               <div className="gc-glass" />
               <div className="gc-content">
-                <div className="gc-icon-wrap"><span style={{ fontSize: 20 }}>{card.icon}</span></div>
+                <div className="gc-icon-wrap">{card.icon}</div>
                 <span className="gc-tag">{card.tag}</span>
                 <div className="gc-title">{card.title}</div>
                 <div className="gc-desc" dangerouslySetInnerHTML={{ __html: card.desc }} />
@@ -471,6 +474,14 @@ export default function Home() {
               ))}
             </div>
           </div>
+          <div style={{ width: 1, height: 20, background: "rgba(255,255,255,0.12)", margin: "0 4px" }} />
+          <button
+            onClick={toggleTheme}
+            style={{ background: "none", border: "none", cursor: "pointer", padding: "8px", display: "flex", alignItems: "center", color: "rgba(255,255,255,0.55)", borderRadius: 9999, transition: "color 0.2s" }}
+            title={theme === "dark" ? "Zu Hell wechseln" : "Zu Dunkel wechseln"}
+          >
+            {theme === "dark" ? <Sun size={16} /> : <Moon size={16} />}
+          </button>
         </div>
       </div>
     </div>

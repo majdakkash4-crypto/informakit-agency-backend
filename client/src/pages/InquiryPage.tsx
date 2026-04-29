@@ -2,16 +2,17 @@ import { useState, useRef } from "react";
 import { useLocation } from "wouter";
 import { trpc } from "@/lib/trpc";
 import { toast } from "sonner";
+import { Share2, Monitor, Code2, TrendingUp, Bot, Palette, Smartphone, Lightbulb } from "lucide-react";
 
 const SERVICE_OPTIONS = [
-  { id: "Social Media", label: "Social Media", icon: "📱" },
-  { id: "Web Design", label: "Web Design", icon: "🎨" },
-  { id: "Development", label: "Development", icon: "💻" },
-  { id: "SEO", label: "SEO", icon: "📈" },
-  { id: "KI & Automation", label: "KI & Automation", icon: "⚡" },
-  { id: "Branding", label: "Branding", icon: "⭐" },
-  { id: "Mobile App", label: "Mobile App", icon: "📲" },
-  { id: "Beratung", label: "Beratung", icon: "🧠" },
+  { id: "Social Media", label: "Social Media", icon: <Share2 size={22} /> },
+  { id: "Web Design", label: "Web Design", icon: <Monitor size={22} /> },
+  { id: "Development", label: "Development", icon: <Code2 size={22} /> },
+  { id: "SEO", label: "SEO", icon: <TrendingUp size={22} /> },
+  { id: "KI & Automation", label: "KI & Automation", icon: <Bot size={22} /> },
+  { id: "Branding", label: "Branding", icon: <Palette size={22} /> },
+  { id: "Mobile App", label: "Mobile App", icon: <Smartphone size={22} /> },
+  { id: "Beratung", label: "Beratung", icon: <Lightbulb size={22} /> },
 ];
 
 const BUDGET_OPTIONS = [
@@ -206,7 +207,7 @@ export default function InquiryPage() {
                   onClick={() => toggleService(s.id)}
                   className={`service-chip ${selectedServices.includes(s.id) ? "active" : ""}`}
                 >
-                  <span style={{ fontSize: 24 }}>{s.icon}</span>
+                  <span style={{ display: "flex", alignItems: "center" }}>{s.icon}</span>
                   <span>{s.label}</span>
                 </button>
               ))}
