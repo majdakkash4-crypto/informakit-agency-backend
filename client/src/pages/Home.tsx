@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+﻿import { useEffect, useRef, useState } from "react";
 import { useLocation } from "wouter";
 import { Bot, Palette, TrendingUp, Share2, Smartphone, Lightbulb, Moon, Sun } from "lucide-react";
 import { useTheme } from "../contexts/ThemeContext";
@@ -203,52 +203,55 @@ const heroStyles = `
   .footer-pills{flex-direction:column;align-items:center}
 }
 
-/* ── Light mode overrides — warm vintage palette ── */
-html:not(.dark) .hero-wrap{background:#E8DFD0!important}
-html:not(.dark) .hero-grid-bg{background-image:linear-gradient(to right,rgba(80,50,20,0.06) 1px,transparent 1px),linear-gradient(to bottom,rgba(80,50,20,0.06) 1px,transparent 1px)}
-html:not(.dark) .hero-orb.orb-1{background:radial-gradient(circle,rgba(139,92,246,0.28) 0%,rgba(139,92,246,0) 70%)!important}
-html:not(.dark) .hero-orb.orb-2{background:radial-gradient(circle,rgba(217,70,239,0.22) 0%,rgba(217,70,239,0) 70%)!important}
-html:not(.dark) .hero-orb.orb-3{background:radial-gradient(circle,rgba(56,189,248,0.14) 0%,rgba(56,189,248,0) 70%)!important}
+/* -- Light mode overrides - clean neutral -- */
+html:not(.dark) .hero-wrap{background:#EAEAEA!important}
+html:not(.dark) .hero-grid-bg{background-image:linear-gradient(to right,rgba(0,0,0,0.05) 1px,transparent 1px),linear-gradient(to bottom,rgba(0,0,0,0.05) 1px,transparent 1px)}
+html:not(.dark) .hero-orb.orb-1{background:radial-gradient(circle,rgba(139,92,246,0.22) 0%,rgba(139,92,246,0) 70%)!important}
+html:not(.dark) .hero-orb.orb-2{background:radial-gradient(circle,rgba(217,70,239,0.18) 0%,rgba(217,70,239,0) 70%)!important}
+html:not(.dark) .hero-orb.orb-3{background:radial-gradient(circle,rgba(56,189,248,0.12) 0%,rgba(56,189,248,0) 70%)!important}
 html:not(.dark) .blur-letter{text-shadow:none}
-html:not(.dark) .l2 .blur-letter{-webkit-text-fill-color:rgba(60,30,10,0.12)!important;color:rgba(60,30,10,0.12)!important}
-html:not(.dark) .hero-tagline{color:rgba(60,35,10,0.55)!important}
+html:not(.dark) .l2 .blur-letter{-webkit-text-fill-color:rgba(0,0,0,0.10)!important;color:rgba(0,0,0,0.10)!important}
+html:not(.dark) .hero-tagline{color:rgba(0,0,0,0.50)!important}
 html:not(.dark) .hero-pretitle{background:rgba(109,40,217,0.08);border-color:rgba(109,40,217,0.22);color:#4C1D95}
-html:not(.dark) .hero-stat-label{color:rgba(60,35,10,0.40)!important}
-html:not(.dark) .hero-stat-num{filter:saturate(0.8)}
-html:not(.dark) .hero-side-label{color:rgba(60,35,10,0.14)!important}
-html:not(.dark) .hero-corner::before,html:not(.dark) .hero-corner::after{background:rgba(60,35,10,0.12)}
-html:not(.dark) .hero-chip{background:rgba(60,35,10,0.06);border-color:rgba(60,35,10,0.12);color:rgba(60,35,10,0.50)}
+html:not(.dark) .hero-stat-label{color:rgba(0,0,0,0.38)!important}
+html:not(.dark) .hero-side-label{color:rgba(0,0,0,0.12)!important}
+html:not(.dark) .hero-corner::before,html:not(.dark) .hero-corner::after{background:rgba(0,0,0,0.12)}
+html:not(.dark) .hero-chip{background:rgba(0,0,0,0.05);border-color:rgba(0,0,0,0.10);color:rgba(0,0,0,0.45)}
 html:not(.dark) .hero-pulse{border-color:rgba(109,40,217,0.14)!important}
-html:not(.dark) .floating-bar{background:rgba(232,223,208,0.92)!important;border-color:rgba(60,35,10,0.14)!important;box-shadow:0 4px 24px rgba(60,35,10,0.12)!important}
-html:not(.dark) .bar-nav-item{color:rgba(60,35,10,0.50)!important}
-html:not(.dark) .bar-nav-item:hover,html:not(.dark) .bar-nav-item.b-active{color:rgba(30,15,5,0.88)!important}
-html:not(.dark) .bar-nav-cursor{background:rgba(109,40,217,0.14)!important;border-color:rgba(109,40,217,0.22)!important;box-shadow:none!important}
-html:not(.dark) .leistungen-section{background:#DDD3C2!important}
+html:not(.dark) .floating-bar{background:rgba(234,234,234,0.94)!important;border-color:rgba(0,0,0,0.10)!important;box-shadow:0 4px 24px rgba(0,0,0,0.10)!important}
+html:not(.dark) .bar-nav-item{color:rgba(0,0,0,0.45)!important}
+html:not(.dark) .bar-nav-item:hover,html:not(.dark) .bar-nav-item.b-active{color:rgba(0,0,0,0.85)!important}
+html:not(.dark) .bar-nav-cursor{background:rgba(109,40,217,0.12)!important;border-color:rgba(109,40,217,0.20)!important;box-shadow:none!important}
+html:not(.dark) .leistungen-section{background:#E2E2E2!important}
 html:not(.dark) .leistungen-title p{color:rgba(109,40,217,0.65)!important}
-html:not(.dark) .leistungen-title h2{color:#1a0e05!important}
+html:not(.dark) .leistungen-title h2{color:#0a0a0a!important}
 html:not(.dark) .leistungen-title h2 span{color:#7C3AED!important}
-html:not(.dark) .gc{background:rgba(255,248,235,0.60)!important;border-color:rgba(60,35,10,0.10)!important}
+html:not(.dark) .gc-bg{background:#ffffff!important}
+html:not(.dark) .gc-glow{opacity:0.15!important}
+html:not(.dark) .gc-glass{background:rgba(255,255,255,0.60)!important;backdrop-filter:blur(2px)!important}
 html:not(.dark) .gc-tag{color:rgba(109,40,217,0.65)!important}
-html:not(.dark) .gc-title{color:#1a0e05!important}
-html:not(.dark) .gc-desc{color:rgba(40,20,5,0.60)!important}
+html:not(.dark) .gc-title{color:#0a0a0a!important}
+html:not(.dark) .gc-desc{color:rgba(0,0,0,0.62)!important}
 html:not(.dark) .gc-desc em{color:#7C3AED!important}
+html:not(.dark) .gc-icon-wrap{background:rgba(0,0,0,0.07)!important}
 html:not(.dark) .lc-cta{background:linear-gradient(135deg,#7C3AED,#A855F7)!important}
-html:not(.dark) .lc-bottom-title{color:#1a0e05!important}
-html:not(.dark) .lc-bottom-desc{color:rgba(40,20,5,0.55)!important}
-html:not(.dark) .zahlen-section{background:#D4C9B5!important}
-html:not(.dark) .zahlen-header h2{color:#1a0e05!important}
+html:not(.dark) .lc-bottom-title{color:#0a0a0a!important}
+html:not(.dark) .lc-bottom-desc{color:rgba(0,0,0,0.50)!important}
+html:not(.dark) .zahlen-section{background:#D8D8D8!important}
+html:not(.dark) .zahlen-header h2{color:#0a0a0a!important}
 html:not(.dark) .zahlen-header h2 em{color:#7C3AED!important}
-html:not(.dark) .zahlen-header p{color:rgba(40,20,5,0.50)!important}
-html:not(.dark) .zahlen-cell{background:rgba(255,248,235,0.55)!important;border-color:rgba(60,35,10,0.10)!important}
+html:not(.dark) .zahlen-header p{color:rgba(0,0,0,0.45)!important}
+html:not(.dark) .zahlen-cell{background:rgba(255,255,255,0.65)!important;border-color:rgba(0,0,0,0.07)!important}
 html:not(.dark) .zahlen-tag{color:rgba(109,40,217,0.65)!important}
-html:not(.dark) .zahlen-desc{color:rgba(40,20,5,0.60)!important}
+html:not(.dark) .zahlen-desc{color:rgba(0,0,0,0.60)!important}
 html:not(.dark) .zahlen-desc em{color:#7C3AED!important}
-html:not(.dark) .footer-wrap{background:#1a0e05!important}
-html:not(.dark) .hero-cta.secondary{background:rgba(60,35,10,0.08)!important;color:rgba(30,15,5,0.65)!important;border-color:rgba(60,35,10,0.18)!important}
+html:not(.dark) .footer-wrap{background:#0a0a0a!important}
+html:not(.dark) .hero-cta.secondary{background:rgba(0,0,0,0.07)!important;color:rgba(0,0,0,0.65)!important;border-color:rgba(0,0,0,0.15)!important}
 
-/* ── Vintage grain overlay (30%) — light mode only ── */
+/* -- Vignette darker corners only -- */
 .vintage-overlay{position:fixed;inset:0;z-index:9996;pointer-events:none;opacity:0;transition:opacity 0.5s ease}
 .vintage-overlay.visible{opacity:1}
+.vintage-overlay::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 40%,transparent 42%,rgba(0,0,0,0.20) 100%)}
 .vintage-overlay::before{content:'';position:absolute;inset:0;background:rgba(160,100,20,0.18);mix-blend-mode:multiply}
 .vintage-overlay::after{content:'';position:absolute;inset:0;opacity:0.30;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");background-repeat:repeat;background-size:300px 300px;mix-blend-mode:overlay}
 
@@ -340,7 +343,7 @@ export default function Home() {
 
   return (
     <div style={{ width: "100%", fontFamily: "'Inter', sans-serif" }}>
-      <div className={`theme-wipe${isWiping ? " animating" : ""}`} style={{ background: theme === "dark" ? "#E8DFD0" : "#000" }} />
+      <div className={`theme-wipe${isWiping ? " animating" : ""}`} style={{ background: theme === "dark" ? "#EAEAEA" : "#000" }} />
       <div className={`vintage-overlay${theme !== "dark" ? " visible" : ""}`} />
       <style>{heroStyles}</style>
 
@@ -560,3 +563,4 @@ export default function Home() {
     </div>
   );
 }
+
