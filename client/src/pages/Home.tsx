@@ -547,8 +547,8 @@ export default function Home() {
           <div className="footer-links">
             <a href="#" className="footer-link" onClick={(e) => { e.preventDefault(); scrollTo("leistungen"); }}>Leistungen</a>
             <a href="#" className="footer-link" onClick={(e) => { e.preventDefault(); scrollTo("ueber"); }}>Über uns</a>
-            <a href="#" className="footer-link">Datenschutz</a>
-            <a href="#" className="footer-link">Impressum</a>
+            <a href="/datenschutz" className="footer-link">Datenschutz</a>
+            <a href="/impressum" className="footer-link">Impressum</a>
           </div>
         </div>
         <div className="footer-bottom">

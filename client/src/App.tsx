@@ -10,6 +10,8 @@ import AdminDashboard from "./pages/AdminDashboard";
 import AdminInquiryDetail from "./pages/AdminInquiryDetail";
 import AdminLogin from "./pages/AdminLogin";
 import CookieBanner from "./components/CookieBanner";
+import Impressum from "./pages/Impressum";
+import Datenschutz from "./pages/Datenschutz";
 
 function Router() {
   return (
@@ -19,6 +21,8 @@ function Router() {
       <Route path="/admin/login" component={AdminLogin} />
       <Route path="/admin" component={AdminDashboard} />
       <Route path="/admin/inquiry/:id" component={AdminInquiryDetail} />
+      <Route path="/impressum" component={Impressum} />
+      <Route path="/datenschutz" component={Datenschutz} />
       <Route path="/404" component={NotFound} />
       <Route component={NotFound} />
     </Switch>
