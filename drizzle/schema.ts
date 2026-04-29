@@ -50,6 +50,8 @@ export const inquiries = pgTable("inquiries", {
   clientPhone: varchar("clientPhone", { length: 64 }),
   companyName: varchar("companyName", { length: 255 }),
   companyWebsite: varchar("companyWebsite", { length: 512 }),
+  instagramUrl: varchar("instagramUrl", { length: 255 }),
+  tiktokUrl: varchar("tiktokUrl", { length: 255 }),
   serviceTypes: jsonb("serviceTypes").$type<string[]>().notNull(),
   budgetRange: varchar("budgetRange", { length: 64 }),
   description: text("description").notNull(),

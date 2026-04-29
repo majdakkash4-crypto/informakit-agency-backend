@@ -38,6 +38,8 @@ export default function InquiryPage() {
   const [selectedServices, setSelectedServices] = useState<string[]>([]);
   const [budgetRange, setBudgetRange] = useState("");
   const [description, setDescription] = useState("");
+  const [instagramUrl, setInstagramUrl] = useState("");
+  const [tiktokUrl, setTiktokUrl] = useState("");
   const [attachments, setAttachments] = useState<{ key: string; url: string; name: string; size: number }[]>([]);
   const [uploading, setUploading] = useState(false);
   const fileInputRef = useRef<HTMLInputElement>(null);
@@ -105,6 +107,8 @@ export default function InquiryPage() {
       clientPhone: clientPhone || undefined,
       companyName: companyName || undefined,
       companyWebsite: companyWebsite || undefined,
+      instagramUrl: instagramUrl || undefined,
+      tiktokUrl: tiktokUrl || undefined,
       serviceTypes: selectedServices,
       budgetRange: budgetRange || undefined,
       description,
@@ -281,6 +285,24 @@ export default function InquiryPage() {
                   placeholder="https://www.muster.de"
                   value={companyWebsite}
                   onChange={(e) => setCompanyWebsite(e.target.value)}
+                />
+              </div>
+              <div style={styles.fieldWrap}>
+                <label style={styles.label}>Instagram <span style={{ opacity: 0.45, fontWeight: 400 }}>(optional)</span></label>
+                <input
+                  style={styles.input}
+                  placeholder="https://instagram.com/deinprofil"
+                  value={instagramUrl}
+                  onChange={(e) => setInstagramUrl(e.target.value)}
+                />
+              </div>
+              <div style={styles.fieldWrap}>
+                <label style={styles.label}>TikTok <span style={{ opacity: 0.45, fontWeight: 400 }}>(optional)</span></label>
+                <input
+                  style={styles.input}
+                  placeholder="https://tiktok.com/@deinprofil"
+                  value={tiktokUrl}
+                  onChange={(e) => setTiktokUrl(e.target.value)}
                 />
               </div>
             </div>

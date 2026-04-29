@@ -202,6 +202,49 @@ const heroStyles = `
   .service-item{flex-direction:column;gap:20px;text-align:center}
   .footer-pills{flex-direction:column;align-items:center}
 }
+
+/* ── Light mode overrides ── */
+html:not(.dark) .hero-wrap{background:#f5f5f7!important}
+html:not(.dark) .hero-grid-bg{background-image:linear-gradient(to right,rgba(0,0,0,0.04) 1px,transparent 1px),linear-gradient(to bottom,rgba(0,0,0,0.04) 1px,transparent 1px)}
+html:not(.dark) .blur-letter{text-shadow:none}
+html:not(.dark) .l2 .blur-letter{-webkit-text-fill-color:rgba(0,0,0,0.10)!important;color:rgba(0,0,0,0.10)!important}
+html:not(.dark) .hero-tagline{color:rgba(0,0,0,0.45)!important}
+html:not(.dark) .hero-pretitle{background:rgba(109,40,217,0.08);border-color:rgba(109,40,217,0.20);color:#4C1D95}
+html:not(.dark) .hero-stat-label{color:rgba(0,0,0,0.35)!important}
+html:not(.dark) .hero-side-label{color:rgba(0,0,0,0.12)!important}
+html:not(.dark) .hero-corner::before,html:not(.dark) .hero-corner::after{background:rgba(0,0,0,0.10)}
+html:not(.dark) .hero-chip{background:rgba(0,0,0,0.05);border-color:rgba(0,0,0,0.10);color:rgba(0,0,0,0.45)}
+html:not(.dark) .floating-bar{background:rgba(245,245,247,0.90)!important;border-color:rgba(0,0,0,0.10)!important;box-shadow:0 4px 24px rgba(0,0,0,0.10)!important}
+html:not(.dark) .bar-nav-item{color:rgba(0,0,0,0.45)!important}
+html:not(.dark) .bar-nav-item:hover,html:not(.dark) .bar-nav-item.b-active{color:rgba(0,0,0,0.85)!important}
+html:not(.dark) .bar-nav-cursor{background:rgba(109,40,217,0.12)!important;border-color:rgba(109,40,217,0.20)!important;box-shadow:none!important}
+html:not(.dark) .leistungen-section{background:#ffffff!important}
+html:not(.dark) .leistungen-title p{color:rgba(109,40,217,0.7)!important}
+html:not(.dark) .leistungen-title h2{color:#0a0a0a!important}
+html:not(.dark) .leistungen-title h2 span{color:#7C3AED!important}
+html:not(.dark) .gc{background:rgba(0,0,0,0.03)!important;border-color:rgba(0,0,0,0.07)!important}
+html:not(.dark) .gc-tag{color:rgba(109,40,217,0.6)!important}
+html:not(.dark) .gc-title{color:#0a0a0a!important}
+html:not(.dark) .gc-desc{color:rgba(0,0,0,0.55)!important}
+html:not(.dark) .gc-desc em{color:#7C3AED!important}
+html:not(.dark) .lc-cta{background:linear-gradient(135deg,#7C3AED,#A855F7)!important}
+html:not(.dark) .lc-bottom-title{color:#0a0a0a!important}
+html:not(.dark) .lc-bottom-desc{color:rgba(0,0,0,0.5)!important}
+html:not(.dark) .zahlen-section{background:#f0f0f2!important}
+html:not(.dark) .zahlen-header h2{color:#0a0a0a!important}
+html:not(.dark) .zahlen-header h2 em{color:#7C3AED!important}
+html:not(.dark) .zahlen-header p{color:rgba(0,0,0,0.45)!important}
+html:not(.dark) .zahlen-cell{background:rgba(255,255,255,0.7)!important;border-color:rgba(0,0,0,0.07)!important}
+html:not(.dark) .zahlen-tag{color:rgba(109,40,217,0.6)!important}
+html:not(.dark) .zahlen-desc{color:rgba(0,0,0,0.55)!important}
+html:not(.dark) .zahlen-desc em{color:#7C3AED!important}
+html:not(.dark) .footer-wrap{background:#0a0a0a!important}
+html:not(.dark) .hero-cta.secondary{background:rgba(0,0,0,0.06)!important;color:rgba(0,0,0,0.65)!important;border-color:rgba(0,0,0,0.15)!important}
+
+/* ── Theme slide transition overlay ── */
+.theme-wipe{position:fixed;inset:0;z-index:99998;pointer-events:none;transform:translateX(-100%)}
+@keyframes wipe-in{0%{transform:translateX(-100%)}50%{transform:translateX(0)}100%{transform:translateX(110%)}}
+.theme-wipe.animating{animation:wipe-in 0.55s cubic-bezier(0.76,0,0.24,1) forwards}
 `;
 
 const letterDelays1 = [0.10, 0.17, 0.24, 0.31, 0.38, 0.45, 0.52, 0.59, 0.66, 0.73];
@@ -211,8 +254,16 @@ const INFORMAKIT = "INFORMAKIT".split("");
 export default function Home() {
   const [, navigate] = useLocation();
   const { theme, toggleTheme } = useTheme();
+  const [isWiping, setIsWiping] = useState(false);
   const barNavRef = useRef<HTMLDivElement>(null);
   const barCursorRef = useRef<HTMLDivElement>(null);
+
+  const handleThemeToggle = () => {
+    if (isWiping) return;
+    setIsWiping(true);
+    setTimeout(() => toggleTheme?.(), 275);
+    setTimeout(() => setIsWiping(false), 600);
+  };
   const [activeSection, setActiveSection] = useState("home");
 
   const scrollTo = (target: string) => {
@@ -267,7 +318,8 @@ export default function Home() {
   }, [activeSection]);
 
   return (
-    <div style={{ width: "100%", fontFamily: "'Inter', sans-serif", background: "#000" }}>
+    <div style={{ width: "100%", fontFamily: "'Inter', sans-serif" }}>
+      <div className={`theme-wipe${isWiping ? " animating" : ""}`} style={{ background: theme === "dark" ? "#f5f5f7" : "#000" }} />
       <style>{heroStyles}</style>
 
       {/* ═══════ HERO ═══════ */}
@@ -476,7 +528,7 @@ export default function Home() {
           </div>
           <div style={{ width: 1, height: 20, background: "rgba(255,255,255,0.12)", margin: "0 4px" }} />
           <button
-            onClick={toggleTheme}
+            onClick={handleThemeToggle}
             style={{ background: "none", border: "none", cursor: "pointer", padding: "8px", display: "flex", alignItems: "center", color: "rgba(255,255,255,0.55)", borderRadius: 9999, transition: "color 0.2s" }}
             title={theme === "dark" ? "Zu Hell wechseln" : "Zu Dunkel wechseln"}
           >
