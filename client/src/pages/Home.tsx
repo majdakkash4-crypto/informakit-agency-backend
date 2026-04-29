@@ -191,7 +191,9 @@ const heroStyles = `
 .footer-scroll-top:hover{background:rgba(139,92,246,0.2);border-color:rgba(139,92,246,0.4);color:#fff;transform:translateY(-2px)}
 .footer-scroll-top svg{width:18px;height:18px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
 
+
 @media(max-width:768px){
+  :root{--mobile-nav-h:110px}
   .hero-chip{display:none}
   .hero-side-label{display:none}
   .hero-stats{gap:20px;flex-wrap:wrap;justify-content:center}
@@ -200,32 +202,41 @@ const heroStyles = `
   .zahlen-grid{grid-template-columns:1fr}
   .service-item{flex-direction:column;gap:20px;text-align:center}
   .footer-pills{flex-direction:column;align-items:center}
-  .floating-container{bottom:16px;width:calc(100% - 32px);left:16px;right:16px;margin:0}
-  .anfrage-btn{min-width:unset;width:100%;height:54px;justify-content:center}
-  .anfrage-label{position:relative;left:unset;transform:none;font-size:16px}
-  .anfrage-circle{position:absolute;left:12px}
-  .anfrage-btn:hover .anfrage-label{opacity:1}
-  .anfrage-btn:hover .anfrage-circle{width:44px;border-radius:50%}
-  .floating-bar{justify-content:space-between;padding:4px 8px;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none}
-  .floating-bar::-webkit-scrollbar{display:none}
-  .bar-nav-item{padding:9px 10px;font-size:12px;letter-spacing:0.03em}
-  .theme-btn{min-width:42px;height:36px;padding:3px}
-  .theme-btn-label{display:none}
-  .theme-btn-circle{width:28px;height:28px}
-  .theme-btn:hover .theme-btn-circle{width:calc(100% - 6px)}
-  .leistungen-title h2{font-size:clamp(28px,7vw,42px)}
   .footer-main{padding:60px 20px}
   .footer-bottom{padding:20px 20px 0;flex-direction:column;align-items:center;text-align:center}
+
+  /* Mobile floating container: full width at bottom */
+  .floating-container{bottom:0!important;left:0!important;right:0!important;width:100%!important;margin:0!important;padding:0 0 env(safe-area-inset-bottom,12px)!important;border-radius:0;background:rgba(10,10,10,0.96);backdrop-filter:blur(20px);border-top:1px solid rgba(255,255,255,0.10);gap:0!important;animation:none;opacity:1!important;flex-direction:column-reverse}
+
+  /* Mobile anfrage button: simple centered pill */
+  .anfrage-btn-wrap{width:100%;padding:10px 16px 6px}
+  .anfrage-glow{display:none}
+  .anfrage-btn{width:100%!important;min-width:unset!important;height:48px!important;border-radius:12px!important;justify-content:center!important;padding:0 20px!important}
+  .anfrage-circle{display:none!important}
+  .anfrage-label{position:static!important;transform:none!important;font-size:15px!important;font-weight:700!important;opacity:1!important}
+  .anfrage-btn:hover .anfrage-label{opacity:1!important}
+  .anfrage-btn:hover .anfrage-circle{display:none!important}
+  .anfrage-btn:hover{transform:none}
+  .anfrage-btn::before{display:none}
+
+  /* Mobile nav bar: compact strip */
+  .floating-bar{width:100%!important;border-radius:0!important;background:transparent!important;border:none!important;box-shadow:none!important;backdrop-filter:none!important;padding:6px 8px 4px!important;justify-content:space-around!important;gap:0!important}
+  .bar-nav-item{padding:8px 6px!important;font-size:10px!important;letter-spacing:0.05em!important;flex:1;text-align:center}
+  .bar-nav-cursor{display:none}
+
+  /* Mobile theme button: icon only, in nav bar */
+  .theme-btn{min-width:36px!important;height:32px!important;padding:2px!important;border-radius:8px!important;background:rgba(255,255,255,0.08)!important;box-shadow:none!important}
+  .theme-btn-label{display:none!important}
+  .theme-btn-circle{width:28px!important;height:28px!important}
+  .theme-btn:hover .theme-btn-circle{width:28px!important;border-radius:50%!important}
+  .theme-btn:hover{transform:none!important}
 }
 @media(max-width:480px){
-  .bar-nav-item{padding:8px 8px;font-size:11px}
-  .anfrage-btn{height:50px}
-  .anfrage-label{font-size:15px}
   .zahlen-big{font-size:48px}
   .hero-ctas{flex-direction:column;align-items:center;gap:10px}
   .hero-cta{width:100%;max-width:280px;justify-content:center}
+  .bar-nav-item{font-size:9px!important;padding:8px 4px!important}
 }
-
 /* -- Light mode: white + anthracite -- */
 html:not(.dark) .hero-wrap{background:#ffffff!important}
 html:not(.dark) .hero-grid-bg{background-image:linear-gradient(to right,rgba(0,0,0,0.06) 1px,transparent 1px),linear-gradient(to bottom,rgba(0,0,0,0.06) 1px,transparent 1px)}
@@ -272,6 +283,14 @@ html:not(.dark) .footer-wrap{background:#111111!important}
 /* -- no vintage overlay -- */
 .vintage-overlay{display:none}
 .vintage-overlay.visible{display:none}
+
+/* -- Mobile light mode bar -- */
+@media(max-width:768px){
+  html:not(.dark) .floating-container{background:rgba(255,255,255,0.97)!important;border-top-color:rgba(0,0,0,0.10)!important}
+  html:not(.dark) .bar-nav-item{color:rgba(0,0,0,0.50)!important}
+  html:not(.dark) .bar-nav-item.b-active{color:#111111!important}
+  html:not(.dark) .theme-btn{background:rgba(0,0,0,0.07)!important}
+}
 .vintage-overlay::before{content:'';position:absolute;inset:0;background:rgba(160,100,20,0.18);mix-blend-mode:multiply}
 .vintage-overlay::after{content:'';position:absolute;inset:0;opacity:0.30;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");background-repeat:repeat;background-size:300px 300px;mix-blend-mode:overlay}
 
@@ -362,7 +381,7 @@ export default function Home() {
   }, [activeSection]);
 
   return (
-    <div style={{ width: "100%", fontFamily: "'Inter', sans-serif" }}>
+    <div style={{ width: "100%", fontFamily: "'Inter', sans-serif", paddingBottom: "calc(var(--mobile-nav-h, 0px))" }}>
       <div className={`theme-wipe${isWiping ? " animating" : ""}`} style={{ background: theme === "dark" ? "#ffffff" : "#000" }} />
       <div className={`vintage-overlay${theme !== "dark" ? " visible" : ""}`} />
       <style>{heroStyles}</style>
