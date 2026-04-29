@@ -203,43 +203,64 @@ const heroStyles = `
   .footer-pills{flex-direction:column;align-items:center}
 }
 
-/* ── Light mode overrides ── */
-html:not(.dark) .hero-wrap{background:#f5f5f7!important}
-html:not(.dark) .hero-grid-bg{background-image:linear-gradient(to right,rgba(0,0,0,0.04) 1px,transparent 1px),linear-gradient(to bottom,rgba(0,0,0,0.04) 1px,transparent 1px)}
+/* ── Light mode overrides — warm vintage palette ── */
+html:not(.dark) .hero-wrap{background:#E8DFD0!important}
+html:not(.dark) .hero-grid-bg{background-image:linear-gradient(to right,rgba(80,50,20,0.06) 1px,transparent 1px),linear-gradient(to bottom,rgba(80,50,20,0.06) 1px,transparent 1px)}
+html:not(.dark) .hero-orb.orb-1{background:radial-gradient(circle,rgba(139,92,246,0.28) 0%,rgba(139,92,246,0) 70%)!important}
+html:not(.dark) .hero-orb.orb-2{background:radial-gradient(circle,rgba(217,70,239,0.22) 0%,rgba(217,70,239,0) 70%)!important}
+html:not(.dark) .hero-orb.orb-3{background:radial-gradient(circle,rgba(56,189,248,0.14) 0%,rgba(56,189,248,0) 70%)!important}
 html:not(.dark) .blur-letter{text-shadow:none}
-html:not(.dark) .l2 .blur-letter{-webkit-text-fill-color:rgba(0,0,0,0.10)!important;color:rgba(0,0,0,0.10)!important}
-html:not(.dark) .hero-tagline{color:rgba(0,0,0,0.45)!important}
-html:not(.dark) .hero-pretitle{background:rgba(109,40,217,0.08);border-color:rgba(109,40,217,0.20);color:#4C1D95}
-html:not(.dark) .hero-stat-label{color:rgba(0,0,0,0.35)!important}
-html:not(.dark) .hero-side-label{color:rgba(0,0,0,0.12)!important}
-html:not(.dark) .hero-corner::before,html:not(.dark) .hero-corner::after{background:rgba(0,0,0,0.10)}
-html:not(.dark) .hero-chip{background:rgba(0,0,0,0.05);border-color:rgba(0,0,0,0.10);color:rgba(0,0,0,0.45)}
-html:not(.dark) .floating-bar{background:rgba(245,245,247,0.90)!important;border-color:rgba(0,0,0,0.10)!important;box-shadow:0 4px 24px rgba(0,0,0,0.10)!important}
-html:not(.dark) .bar-nav-item{color:rgba(0,0,0,0.45)!important}
-html:not(.dark) .bar-nav-item:hover,html:not(.dark) .bar-nav-item.b-active{color:rgba(0,0,0,0.85)!important}
-html:not(.dark) .bar-nav-cursor{background:rgba(109,40,217,0.12)!important;border-color:rgba(109,40,217,0.20)!important;box-shadow:none!important}
-html:not(.dark) .leistungen-section{background:#ffffff!important}
-html:not(.dark) .leistungen-title p{color:rgba(109,40,217,0.7)!important}
-html:not(.dark) .leistungen-title h2{color:#0a0a0a!important}
+html:not(.dark) .l2 .blur-letter{-webkit-text-fill-color:rgba(60,30,10,0.12)!important;color:rgba(60,30,10,0.12)!important}
+html:not(.dark) .hero-tagline{color:rgba(60,35,10,0.55)!important}
+html:not(.dark) .hero-pretitle{background:rgba(109,40,217,0.08);border-color:rgba(109,40,217,0.22);color:#4C1D95}
+html:not(.dark) .hero-stat-label{color:rgba(60,35,10,0.40)!important}
+html:not(.dark) .hero-stat-num{filter:saturate(0.8)}
+html:not(.dark) .hero-side-label{color:rgba(60,35,10,0.14)!important}
+html:not(.dark) .hero-corner::before,html:not(.dark) .hero-corner::after{background:rgba(60,35,10,0.12)}
+html:not(.dark) .hero-chip{background:rgba(60,35,10,0.06);border-color:rgba(60,35,10,0.12);color:rgba(60,35,10,0.50)}
+html:not(.dark) .hero-pulse{border-color:rgba(109,40,217,0.14)!important}
+html:not(.dark) .floating-bar{background:rgba(232,223,208,0.92)!important;border-color:rgba(60,35,10,0.14)!important;box-shadow:0 4px 24px rgba(60,35,10,0.12)!important}
+html:not(.dark) .bar-nav-item{color:rgba(60,35,10,0.50)!important}
+html:not(.dark) .bar-nav-item:hover,html:not(.dark) .bar-nav-item.b-active{color:rgba(30,15,5,0.88)!important}
+html:not(.dark) .bar-nav-cursor{background:rgba(109,40,217,0.14)!important;border-color:rgba(109,40,217,0.22)!important;box-shadow:none!important}
+html:not(.dark) .leistungen-section{background:#DDD3C2!important}
+html:not(.dark) .leistungen-title p{color:rgba(109,40,217,0.65)!important}
+html:not(.dark) .leistungen-title h2{color:#1a0e05!important}
 html:not(.dark) .leistungen-title h2 span{color:#7C3AED!important}
-html:not(.dark) .gc{background:rgba(0,0,0,0.03)!important;border-color:rgba(0,0,0,0.07)!important}
-html:not(.dark) .gc-tag{color:rgba(109,40,217,0.6)!important}
-html:not(.dark) .gc-title{color:#0a0a0a!important}
-html:not(.dark) .gc-desc{color:rgba(0,0,0,0.55)!important}
+html:not(.dark) .gc{background:rgba(255,248,235,0.60)!important;border-color:rgba(60,35,10,0.10)!important}
+html:not(.dark) .gc-tag{color:rgba(109,40,217,0.65)!important}
+html:not(.dark) .gc-title{color:#1a0e05!important}
+html:not(.dark) .gc-desc{color:rgba(40,20,5,0.60)!important}
 html:not(.dark) .gc-desc em{color:#7C3AED!important}
 html:not(.dark) .lc-cta{background:linear-gradient(135deg,#7C3AED,#A855F7)!important}
-html:not(.dark) .lc-bottom-title{color:#0a0a0a!important}
-html:not(.dark) .lc-bottom-desc{color:rgba(0,0,0,0.5)!important}
-html:not(.dark) .zahlen-section{background:#f0f0f2!important}
-html:not(.dark) .zahlen-header h2{color:#0a0a0a!important}
+html:not(.dark) .lc-bottom-title{color:#1a0e05!important}
+html:not(.dark) .lc-bottom-desc{color:rgba(40,20,5,0.55)!important}
+html:not(.dark) .zahlen-section{background:#D4C9B5!important}
+html:not(.dark) .zahlen-header h2{color:#1a0e05!important}
 html:not(.dark) .zahlen-header h2 em{color:#7C3AED!important}
-html:not(.dark) .zahlen-header p{color:rgba(0,0,0,0.45)!important}
-html:not(.dark) .zahlen-cell{background:rgba(255,255,255,0.7)!important;border-color:rgba(0,0,0,0.07)!important}
-html:not(.dark) .zahlen-tag{color:rgba(109,40,217,0.6)!important}
-html:not(.dark) .zahlen-desc{color:rgba(0,0,0,0.55)!important}
+html:not(.dark) .zahlen-header p{color:rgba(40,20,5,0.50)!important}
+html:not(.dark) .zahlen-cell{background:rgba(255,248,235,0.55)!important;border-color:rgba(60,35,10,0.10)!important}
+html:not(.dark) .zahlen-tag{color:rgba(109,40,217,0.65)!important}
+html:not(.dark) .zahlen-desc{color:rgba(40,20,5,0.60)!important}
 html:not(.dark) .zahlen-desc em{color:#7C3AED!important}
-html:not(.dark) .footer-wrap{background:#0a0a0a!important}
-html:not(.dark) .hero-cta.secondary{background:rgba(0,0,0,0.06)!important;color:rgba(0,0,0,0.65)!important;border-color:rgba(0,0,0,0.15)!important}
+html:not(.dark) .footer-wrap{background:#1a0e05!important}
+html:not(.dark) .hero-cta.secondary{background:rgba(60,35,10,0.08)!important;color:rgba(30,15,5,0.65)!important;border-color:rgba(60,35,10,0.18)!important}
+
+/* ── Vintage grain overlay (30%) — light mode only ── */
+.vintage-overlay{position:fixed;inset:0;z-index:9996;pointer-events:none;opacity:0;transition:opacity 0.5s ease}
+.vintage-overlay.visible{opacity:1}
+.vintage-overlay::before{content:'';position:absolute;inset:0;background:rgba(160,100,20,0.18);mix-blend-mode:multiply}
+.vintage-overlay::after{content:'';position:absolute;inset:0;opacity:0.30;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");background-repeat:repeat;background-size:300px 300px;mix-blend-mode:overlay}
+
+/* ── Theme-toggle button (anfrage-style) ── */
+.theme-btn{position:relative;cursor:pointer;border:none;overflow:hidden;border-radius:9999px;height:40px;min-width:126px;background:linear-gradient(135deg,rgba(139,92,246,0.70),rgba(217,70,239,0.65));border:1px solid rgba(255,255,255,0.28);backdrop-filter:blur(16px) saturate(180%);box-shadow:0 4px 16px rgba(139,92,246,0.40),inset 0 1.5px 0 rgba(255,255,255,0.32),inset 0 -1px 0 rgba(0,0,0,0.10);display:flex;align-items:center;justify-content:flex-start;padding:5px;transition:box-shadow 0.2s,transform 0.15s}
+.theme-btn:hover{transform:translateY(-1px);box-shadow:0 8px 28px rgba(139,92,246,0.55),inset 0 1.5px 0 rgba(255,255,255,0.36)}
+.theme-btn-circle{width:30px;height:30px;border-radius:50%;flex-shrink:0;background:rgba(255,255,255,0.22);display:flex;align-items:center;justify-content:center;transition:width 0.42s cubic-bezier(0.4,0,0.2,1);overflow:hidden;color:#fff}
+.theme-btn:hover .theme-btn-circle{width:calc(100% - 10px);border-radius:9999px}
+.theme-btn-label{position:absolute;left:52%;transform:translateX(-40%);font-size:13px;font-weight:700;letter-spacing:0.04em;color:#fff;white-space:nowrap;pointer-events:none;transition:opacity 0.22s}
+.theme-btn:hover .theme-btn-label{opacity:0}
+.theme-btn::before{content:'';position:absolute;top:0;left:-100%;width:60%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,0.14),transparent);pointer-events:none}
+.theme-btn:hover::before{animation:sheen 0.50s ease forwards}
 
 /* ── Theme slide transition overlay ── */
 .theme-wipe{position:fixed;inset:0;z-index:99998;pointer-events:none;transform:translateX(-100%)}
@@ -319,7 +340,8 @@ export default function Home() {
 
   return (
     <div style={{ width: "100%", fontFamily: "'Inter', sans-serif" }}>
-      <div className={`theme-wipe${isWiping ? " animating" : ""}`} style={{ background: theme === "dark" ? "#f5f5f7" : "#000" }} />
+      <div className={`theme-wipe${isWiping ? " animating" : ""}`} style={{ background: theme === "dark" ? "#E8DFD0" : "#000" }} />
+      <div className={`vintage-overlay${theme !== "dark" ? " visible" : ""}`} />
       <style>{heroStyles}</style>
 
       {/* ═══════ HERO ═══════ */}
@@ -526,13 +548,12 @@ export default function Home() {
               ))}
             </div>
           </div>
-          <div style={{ width: 1, height: 20, background: "rgba(255,255,255,0.12)", margin: "0 4px" }} />
-          <button
-            onClick={handleThemeToggle}
-            style={{ background: "none", border: "none", cursor: "pointer", padding: "8px", display: "flex", alignItems: "center", color: "rgba(255,255,255,0.55)", borderRadius: 9999, transition: "color 0.2s" }}
-            title={theme === "dark" ? "Zu Hell wechseln" : "Zu Dunkel wechseln"}
-          >
-            {theme === "dark" ? <Sun size={16} /> : <Moon size={16} />}
+          <div style={{ width: 1, height: 20, background: "rgba(255,255,255,0.12)", margin: "0 6px" }} />
+          <button className="theme-btn" onClick={handleThemeToggle}>
+            <div className="theme-btn-circle">
+              {theme === "dark" ? <Sun size={15} /> : <Moon size={15} />}
+            </div>
+            <span className="theme-btn-label">{theme === "dark" ? "Hell" : "Dunkel"}</span>
           </button>
         </div>
       </div>
